@@ -4,7 +4,7 @@ Support Vector Machine Algorithm to detect lens flare in photos.
 
 ## Installation
 
-git clone https://github.com/matt-quantblack/flare_detection.git
+git clone https://github.com/quantmatt/flare_detection.git
 
 pip install -r requirements.txt
 
