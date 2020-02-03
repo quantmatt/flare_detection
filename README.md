@@ -24,7 +24,7 @@ This will overwrite the current default.save model
 
 ## How it works
 
-The idea behind this algorithm is lens flare in photos shows up as a white blob of consistent colour. Therefore the colour gradient for the lens flare would be zero. 
+The idea behind this algorithm is, lens flare in photos shows up as a white blob of consistent colour. Therefore the colour gradient for the lens flare would be zero. 
 
 Using scikit-images hog function the histogram of gradients can easily be calculated. 
 
@@ -41,8 +41,8 @@ A cross validation score using the 80 included images achieves an accuracy of 86
 
 ## Improvements
 
-One flaw with the above model is that non-white blobs could be picked up as lens flare. Therefore an improvement would be to check each zero gradient cell for the average colour and only count the cell of the colour is above 240 in all 3 channels.
+One flaw with the above model is that non-white blobs could be picked up as lens flare. Therefore an improvement would be to check each zero gradient cell for the average colour and only count the cell if the colour is above 240 in all 3 channels.
 
-Another improvement could make use of the radial type pattern on the edge of the lens flare. To look for this it would require moving around the outer cells of the zero gradient areas and checking the gradient. It would be expected the gradient on the edge of the lens flare would slowly change from horizonatl to vertical back to horizonatal again.
+Another improvement could make use of the radial type pattern on the edge of the lens flare. To look for this it would require moving around the outer cells of the zero gradient areas and checking the gradient. It would be expected the gradient on the edge of the lens flare would slowly change from horizonatl to vertical back to horizonatal again as you trace around the edge of the zero gradient area.
 
-This algorithm relys solely on the HOG feature as quite a good and simple starting point. Other image feature extraction techniques could be investigated to see if they add to the accuracy of the model.
+This algorithm relys solely on the HOG feature as quite a simple starting point. Other image feature extraction techniques could be investigated to see if they add to the accuracy of the model.
